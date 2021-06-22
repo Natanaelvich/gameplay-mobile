@@ -1,6 +1,7 @@
 <p align='center'>
-  <img src='' width='140' />
-  <h1 align='center'> Create groups to play your favorite games with your friends, made with react native </h1>
+  <img src='https://user-images.githubusercontent.com/52014318/122844153-69d06a00-d2d7-11eb-8677-b919c344bf6b.png' width='140' />
+  <h1 align='center'> Create groups to play your favorite games with your friends, made with react native 🎮!
+</h1>
 </p>
 
 ### GamePlay ⚡
@@ -18,7 +19,7 @@
 ## ScreenShots
 
 <p align='center'>
-  <img src='' width='240' />
+  <img src='https://user-images.githubusercontent.com/52014318/122844199-82408480-d2d7-11eb-9de4-e164000bdf48.png' width='240' />
 
 </p>
 
