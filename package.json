@@ -2,6 +2,8 @@
   "main": "index.js",
   "scripts": {
     "android": "react-native run-android",
+    "android:release": "cd android/ && ./gradlew clean && ./gradlew cleanBuildCache && ./gradlew assembleRelease && echo android/app/build/outputs/apk/release",
+    "android:abb": "cd android/ && ./gradlew clean && ./gradlew cleanBuildCache && ./gradlew bundleRelease && echo android/app/build/outputs/bundle/release/app-release.aab",
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
