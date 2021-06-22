@@ -1,12 +1,17 @@
 {
   "name": "gameplay",
-  "displayName": "gameplay",
+  "displayName": "GamePlay",
   "expo": {
-    "name": "gameplay",
+    "name": "GamePlay",
     "slug": "gameplay",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "splash": {
+      "image": "./assets/splash.png",
+      "reziseMode": "contain",
+      "backgroundColor": "#0E1647"
+    }
   }
 }
