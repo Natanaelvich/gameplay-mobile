@@ -28,7 +28,7 @@ export const Title = styled.Text`
   flex: 1;
   text-align: center;
 
-  font-family: ${({ theme }) => theme.fonts.text500};
-  font-size: 12px;
+  font-family: ${({ theme }) => theme.fonts.title500};
+  font-size: 16px;
   color: ${({ theme }) => theme.colors.heading};
 `;
