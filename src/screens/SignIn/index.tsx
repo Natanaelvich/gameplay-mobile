@@ -3,7 +3,7 @@ import React from 'react';
 import illustration from '@/assets/illustration.png';
 
 import SocialButton from '@/components/SocialButton';
-
+import { useNavigation } from '@react-navigation/native';
 import {
   Container,
   Header,
@@ -15,6 +15,12 @@ import {
 } from './styles';
 
 const SignIn = (): JSX.Element => {
+  const navigation = useNavigation();
+
+  function handleSignIn() {
+    navigation.navigate('Home');
+  }
+
   return (
     <Container>
       <Header>
@@ -31,7 +37,11 @@ const SignIn = (): JSX.Element => {
       </Content>
 
       <Footer>
-        <SocialButton title="Entrar com Discord" type="discord" />
+        <SocialButton
+          title="Entrar com Discord"
+          type="discord"
+          onPress={handleSignIn}
+        />
       </Footer>
     </Container>
   );
