@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
-import { FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import { Profile } from '../../components/Profile';
-import { ButtonAdd } from '../../components/ButtonAdd';
 import { CategorySelect } from '../../components/CategorySelect';
-import { ListHeader } from '../../components/ListHeader';
 import { Appointment } from '../../components/Appointment';
 import { ListDivider } from '../../components/ListDivider';
+import { ListHeader } from '../../components/ListHeader';
+import { Background } from '../../components/Background';
+import { ButtonAdd } from '../../components/ButtonAdd';
+import { Profile } from '../../components/Profile';
 
-import { Container, Header, Content, Matches } from './styles';
+import { styles } from './styles';
 
 export function Home() {
   const [category, setCategory] = useState('');
+
+  const navigation = useNavigation();
 
   const appointments = [
     {
       id: '1',
       guild: {
         id: '1',
-        name: 'lendários',
+        name: 'Lendários',
         icon: null,
         owner: true,
       },
@@ -31,7 +35,7 @@ export function Home() {
       id: '2',
       guild: {
         id: '1',
-        name: 'lendários',
+        name: 'Lendários',
         icon: null,
         owner: true,
       },
@@ -46,27 +50,40 @@ export function Home() {
     categoryId === category ? setCategory('') : setCategory(categoryId);
   }
 
+  function handleAppointmentDetails() {
+    navigation.navigate('AppointmentDetails');
+  }
+
+  function handleAppointmentCreate() {
+    navigation.navigate('AppointmentCreate');
+  }
+
   return (
-    <Container>
-      <Header>
+    <Background>
+      <View style={styles.header}>
         <Profile />
-        <ButtonAdd />
-      </Header>
+        <ButtonAdd onPress={handleAppointmentCreate} />
+      </View>
+
       <CategorySelect
         categorySelected={category}
         setCategory={handleCategorySelect}
       />
-      <Content>
-        <ListHeader title="Partidas agendadas" subtitle="total 6" />
 
-        <Matches
+      <View style={styles.content}>
+        <ListHeader title="Partidas agendadas" subtitle="Total 6" />
+
+        <FlatList
           data={appointments}
           keyExtractor={item => item.id}
-          renderItem={({ item }) => <Appointment data={item} />}
-          showsVerticalScrollIndicator={false}
+          renderItem={({ item }) => (
+            <Appointment data={item} onPress={handleAppointmentDetails} />
+          )}
           ItemSeparatorComponent={() => <ListDivider />}
+          style={styles.matches}
+          showsVerticalScrollIndicator={false}
         />
-      </Content>
-    </Container>
+      </View>
+    </Background>
   );
 }

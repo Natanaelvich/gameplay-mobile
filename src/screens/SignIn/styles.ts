@@ -1,36 +1,34 @@
-import styled from 'styled-components/native';
+import { theme } from '@/styles/theme';
+import { StyleSheet } from 'react-native';
 
-export const Container = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  background-color: ${({ theme }) => theme.colors.secondary100};
-`;
-
-export const Header = styled.View``;
-
-export const Illustration = styled.Image``;
-
-export const Content = styled.View``;
-
-export const Title = styled.Text`
-  font-family: ${({ theme }) => theme.fonts.title700};
-  font-size: 40px;
-  color: ${({ theme }) => theme.colors.heading};
-  text-align: center;
-  margin-top: -50px;
-`;
-
-export const SubTitle = styled.Text`
-  font-family: ${({ theme }) => theme.fonts.text400};
-  font-size: 16px;
-  color: ${({ theme }) => theme.colors.heading};
-  text-align: center;
-  margin-top: 16px;
-`;
-
-export const Footer = styled.View`
-  margin-top: 48px;
-  width: 100%;
-  padding: 0 50px;
-`;
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image: {
+    width: '100%',
+    height: 360,
+  },
+  content: {
+    marginTop: -40,
+    paddingHorizontal: 50,
+  },
+  title: {
+    color: theme.colors.heading,
+    textAlign: 'center',
+    fontSize: 40,
+    marginBottom: 16,
+    fontFamily: theme.fonts.title700,
+    lineHeight: 40,
+  },
+  subtitle: {
+    color: theme.colors.heading,
+    fontSize: 15,
+    textAlign: 'center',
+    marginBottom: 64,
+    fontFamily: theme.fonts.title500,
+    lineHeight: 25,
+  },
+});

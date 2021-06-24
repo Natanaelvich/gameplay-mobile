@@ -1,20 +1,14 @@
 import React from 'react';
-
-import illustration from '@/assets/illustration.png';
-
-import SocialButton from '@/components/SocialButton';
+import { View, Text, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import {
-  Container,
-  Header,
-  Illustration,
-  Content,
-  Title,
-  SubTitle,
-  Footer,
-} from './styles';
 
-const SignIn = (): JSX.Element => {
+import IllustrationImg from '../../assets/illustration.png';
+import { styles } from './styles';
+
+import { ButtonIcon } from '../../components/ButtonIcon';
+import { Background } from '../../components/Background';
+
+export function SignIn() {
   const navigation = useNavigation();
 
   function handleSignIn() {
@@ -22,29 +16,28 @@ const SignIn = (): JSX.Element => {
   }
 
   return (
-    <Container>
-      <Header>
-        <Illustration source={illustration} />
-      </Header>
-
-      <Content>
-        <Title>
-          Conecte-se e{'\n'}organize suas{'\n'}jogatinas
-        </Title>
-        <SubTitle>
-          Crie grupos para jogar seus games{'\n'}favoritos com seus amigos
-        </SubTitle>
-      </Content>
-
-      <Footer>
-        <SocialButton
-          title="Entrar com Discord"
-          type="discord"
-          onPress={handleSignIn}
+    <Background>
+      <View style={styles.container}>
+        <Image
+          source={IllustrationImg}
+          style={styles.image}
+          resizeMode="stretch"
         />
-      </Footer>
-    </Container>
-  );
-};
 
-export default SignIn;
+        <View style={styles.content}>
+          <Text style={styles.title}>
+            Conecte-se {'\n'}e organize suas {'\n'}
+            jogatinas
+          </Text>
+
+          <Text style={styles.subtitle}>
+            Crie grupos para jogar seus games {'\n'}
+            favoritos com seus amigos
+          </Text>
+
+          <ButtonIcon title="Entrar com Discord" onPress={handleSignIn} />
+        </View>
+      </View>
+    </Background>
+  );
+}
