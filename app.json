@@ -4,6 +4,7 @@
   "expo": {
     "name": "GamePlay",
     "slug": "gameplay",
+    "scheme": "gameplay",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
