@@ -15,6 +15,7 @@ import {
   Footer,
   DateInfo,
   Date,
+  LinearGradientCustom,
 } from './styles';
 
 import PlayerSvg from '../../assets/player.svg';
@@ -44,12 +45,14 @@ type Props = RectButtonProps & {
 export function Appointment({ data, ...rest }: Props) {
   const [category] = categories.filter(item => item.id === data.category);
   const { owner } = data.guild;
-  const { primary, on } = theme.colors;
+  const { primary, on, secondary50, secondary70 } = theme.colors;
 
   return (
     <RectButton {...rest}>
       <Container>
-        <GuildIcon />
+        <LinearGradientCustom colors={[secondary50, secondary70]}>
+          <GuildIcon />
+        </LinearGradientCustom>
 
         <Content>
           <Header>

@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export const Container = styled.View`
   width: 100%;
@@ -57,4 +58,11 @@ export const Player = styled.Text`
   font-size: 13px;
   margin-left: 7px;
   margin-right: 24px;
+`;
+
+export const LinearGradientCustom = styled(LinearGradient)`
+  height: 68px;
+  width: 64px;
+  border-radius: 8px;
+  margin-right: 20px;
 `;

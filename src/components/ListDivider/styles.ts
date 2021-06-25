@@ -1,9 +1,11 @@
-import styled from 'styled-components/native';
+import { theme } from '@/styles/theme';
+import { StyleSheet } from 'react-native';
 
-export const Container = styled.View`
-  width: 80%;
-  height: 1px;
-  background-color: ${({ theme }) => theme.colors.secondary40};
-  margin: 21px 0;
-  align-self: flex-end;
-`;
+export const styles = StyleSheet.create({
+  container: {
+    height: 1,
+    width: '78%',
+    alignSelf: 'flex-end',
+    backgroundColor: theme.colors.secondary40,
+  },
+});
