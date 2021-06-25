@@ -30,7 +30,6 @@ const members = [
     status: 'offline',
   },
 ];
-
 export function AppointmentDetails() {
   return (
     <Background>

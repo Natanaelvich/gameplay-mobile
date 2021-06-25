@@ -80,6 +80,7 @@ export function Home() {
             <Appointment data={item} onPress={handleAppointmentDetails} />
           )}
           ItemSeparatorComponent={() => <ListDivider />}
+          contentContainerStyle={{ paddingBottom: 69 }}
           style={styles.matches}
           showsVerticalScrollIndicator={false}
         />
