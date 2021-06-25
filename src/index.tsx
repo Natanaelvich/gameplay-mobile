@@ -18,6 +18,7 @@ import {
 import Loading from '@/components/Loading';
 import { theme } from '@/styles/theme';
 import { Routes } from './routes';
+import { AuthProvider } from './hooks/useAuth';
 
 const App = (): JSX.Element => {
   const [fontsLoaded] = useFonts({
@@ -39,8 +40,9 @@ const App = (): JSX.Element => {
         backgroundColor="transparent"
         translucent
       />
-
-      <Routes />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </ThemeProvider>
   );
 };
