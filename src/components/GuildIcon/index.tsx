@@ -4,7 +4,7 @@ import { Image, View } from 'react-native';
 import { styles } from './styles';
 import DiscordSvg from '../../assets/discord.svg';
 
-const { CDN_IMAGE } = process.env;
+const { DISCORD_CDN_IMAGE } = process.env;
 
 type Props = {
   guildId: string;
@@ -12,7 +12,7 @@ type Props = {
 };
 
 export function GuildIcon({ guildId, iconId }: Props) {
-  const uri = `${CDN_IMAGE}/icons/${guildId}/${iconId}.png`;
+  const uri = `${DISCORD_CDN_IMAGE}/icons/${guildId}/${iconId}.png`;
 
   return (
     <View style={styles.container}>
