@@ -101,24 +101,33 @@ export function AppointmentDetails() {
         </View>
       </ImageBackground>
 
-      {/* {loading ? (
+      {loading ? (
         <Load />
       ) : (
         <>
           <ListHeader
             title="Jogadores"
-            subtitle={`Total ${widget.members.length}`}
+            subtitle={`Total ${
+              widget.members.length ? widget.members.length : 0
+            }`}
           />
 
           <FlatList
-            data={widget.members}
+            data={widget.members || []}
             keyExtractor={item => item.id}
             renderItem={({ item }) => <Member data={item} />}
             ItemSeparatorComponent={() => <ListDivider isCentered />}
             style={styles.members}
+            ListEmptyComponent={() => (
+              <View style={styles.emptyContainer}>
+                <Text style={styles.emptyText}>
+                  Não há ninguém online agora.
+                </Text>
+              </View>
+            )}
           />
         </>
-      )} */}
+      )}
       {guildSelected.guild.owner && (
         <View style={styles.footer}>
           <ButtonIcon title="Entrar na partida" onPress={handleOpenGuild} />
