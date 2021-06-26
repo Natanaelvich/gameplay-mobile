@@ -19,8 +19,20 @@
 ## ScreenShots
 
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/52014318/122844199-82408480-d2d7-11eb-9de4-e164000bdf48.png' width='240' />
+<img src='https://user-images.githubusercontent.com/52014318/123525933-c56d6f80-d6aa-11eb-9cc2-8b0088ddd88a.png' width='240' />
+<img src='https://user-images.githubusercontent.com/52014318/123525934-c6060600-d6aa-11eb-8b7c-22403be4a31a.png' width='240' />
+<img src='https://user-images.githubusercontent.com/52014318/123525935-c6060600-d6aa-11eb-96dc-8169e9efe3f5.png' width='240' />
+</p>
 
+<p align='center'>
+<img src='https://user-images.githubusercontent.com/52014318/123525936-c69e9c80-d6aa-11eb-95fc-17b21ad5c5df.png' width='240' />
+<img src='https://user-images.githubusercontent.com/52014318/123525937-c69e9c80-d6aa-11eb-8783-e682b4dec366.png' width='240' />
+<img src='https://user-images.githubusercontent.com/52014318/123525938-c7373300-d6aa-11eb-9f79-62d576145583.png' width='240' />
+</p>
+
+<p align='center'>
+<img src='https://user-images.githubusercontent.com/52014318/123525939-c7373300-d6aa-11eb-9a06-5f5efbd5817d.png' width='240' />
+<img src='https://user-images.githubusercontent.com/52014318/123525940-c7cfc980-d6aa-11eb-8d85-971d7d135158.png' width='240' />
 </p>
 
 <p align='center'>
