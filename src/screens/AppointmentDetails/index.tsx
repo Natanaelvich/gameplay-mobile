@@ -85,7 +85,7 @@ export function AppointmentDetails() {
       <Header
         title="Detalhes"
         action={
-          guildSelected.guild.owner && (
+          guildSelected?.guild?.owner && (
             <BorderlessButton onPress={handleShareInvitation}>
               <Fontisto name="share" size={24} color={theme.colors.primary} />
             </BorderlessButton>
@@ -95,9 +95,9 @@ export function AppointmentDetails() {
 
       <ImageBackground source={BannerImg} style={styles.banner}>
         <View style={styles.bannerContent}>
-          <Text style={styles.title}> {guildSelected.guild.name}</Text>
+          <Text style={styles.title}> {guildSelected?.guild?.name}</Text>
 
-          <Text style={styles.subtitle}>{guildSelected.description}</Text>
+          <Text style={styles.subtitle}>{guildSelected?.description}</Text>
         </View>
       </ImageBackground>
 
@@ -108,12 +108,12 @@ export function AppointmentDetails() {
           <ListHeader
             title="Jogadores"
             subtitle={`Total ${
-              widget.members.length ? widget.members.length : 0
+              widget?.members?.length ? widget?.members?.length : 0
             }`}
           />
 
           <FlatList
-            data={widget.members || []}
+            data={widget?.members || []}
             keyExtractor={item => item.id}
             renderItem={({ item }) => <Member data={item} />}
             ItemSeparatorComponent={() => <ListDivider isCentered />}
@@ -128,7 +128,7 @@ export function AppointmentDetails() {
           />
         </>
       )}
-      {guildSelected.guild.owner && (
+      {guildSelected?.guild?.owner && (
         <View style={styles.footer}>
           <ButtonIcon title="Entrar na partida" onPress={handleOpenGuild} />
         </View>
