@@ -5,11 +5,11 @@ import * as AuthSession from 'expo-auth-session';
 
 import { api } from '../services/api';
 
-const DISCORD_REDIRECT_URI = process.env;
-const DISCORD_SCOPE = process.env;
-const DISCORD_RESPONSE_TYPE = process.env;
-const DISCORD_CLIENT_ID = process.env;
-const DISCORD_CDN_IMAGE = process.env;
+const { DISCORD_REDIRECT_URI } = process.env;
+const { DISCORD_SCOPE } = process.env;
+const { DISCORD_RESPONSE_TYPE } = process.env;
+const { DISCORD_CLIENT_ID } = process.env;
+const { DISCORD_CDN_IMAGE } = process.env;
 
 type User = {
   id: string;
