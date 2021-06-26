@@ -13,6 +13,7 @@ module.exports = function (api) {
           },
         },
       ],
+   "inline-dotenv"
     ],
   };
 };
