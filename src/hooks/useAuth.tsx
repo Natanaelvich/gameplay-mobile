@@ -3,15 +3,13 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 import * as AuthSession from 'expo-auth-session';
 
-import {
-  DISCORD_REDIRECT_URI,
-  DISCORD_SCOPE,
-  DISCORD_RESPONSE_TYPE,
-  DISCORD_CLIENT_ID,
-  DISCORD_CDN_IMAGE,
-} from '@env';
-
 import { api } from '../services/api';
+
+const DISCORD_REDIRECT_URI = process.env;
+const DISCORD_SCOPE = process.env;
+const DISCORD_RESPONSE_TYPE = process.env;
+const DISCORD_CLIENT_ID = process.env;
+const DISCORD_CDN_IMAGE = process.env;
 
 type User = {
   id: string;
