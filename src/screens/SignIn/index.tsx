@@ -2,7 +2,7 @@ import React from 'react';
 import { Alert, ActivityIndicator } from 'react-native';
 
 import { useAuth } from '@/hooks/useAuth';
-import { theme } from '@/styles/theme';
+import { useTheme } from 'styled-components';
 import IllustrationImg from '../../assets/illustration.png';
 import * as S from './styles';
 
@@ -10,6 +10,8 @@ import { ButtonIcon } from '../../components/ButtonIcon';
 import { Background } from '../../components/Background';
 
 export function SignIn() {
+  const theme = useTheme();
+
   const { loading, signIn } = useAuth();
 
   async function handleSignIn() {

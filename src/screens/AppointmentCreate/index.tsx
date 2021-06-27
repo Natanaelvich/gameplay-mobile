@@ -5,9 +5,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import uuid from 'react-native-uuid';
 import { View, Platform, ScrollView } from 'react-native';
 
-import { theme } from '@/styles/theme';
 import { useNavigation } from '@react-navigation/core';
 import { COLLECTION_APPOINTMENTS } from '@/configs/database';
+import { useTheme } from 'styled-components';
 import * as S from './styles';
 
 import { CategorySelect } from '../../components/CategorySelect';
@@ -23,6 +23,8 @@ import { Guilds } from '../Guilds';
 
 export function AppointmentCreate() {
   const navigation = useNavigation();
+
+  const theme = useTheme();
 
   const [category, setCategory] = useState('');
   const [openGuildsModa, setOpenGuildsModal] = useState(false);

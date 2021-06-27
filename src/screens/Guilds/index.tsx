@@ -1,7 +1,6 @@
 import { Load } from '@/components/Load';
 import { api } from '@/services/api';
 import React, { useEffect, useState } from 'react';
-import { View, FlatList } from 'react-native';
 import { GuildProps } from '../../components/Guild';
 
 import { Guild } from '../../components/Guild';

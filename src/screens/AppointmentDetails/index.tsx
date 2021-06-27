@@ -5,10 +5,10 @@ import { BorderlessButton } from 'react-native-gesture-handler';
 import * as Linking from 'expo-linking';
 import { Platform, Alert, Share } from 'react-native';
 
-import { theme } from '@/styles/theme';
 import { AppointmentProps } from '@/components/Appointment';
 import { api } from '@/services/api';
 import { Load } from '@/components/Load';
+import { useTheme } from 'styled-components';
 import BannerImg from '../../assets/banner.png';
 
 import { ListDivider } from '../../components/ListDivider';
@@ -32,6 +32,8 @@ type GuildWidget = {
 };
 
 export function AppointmentDetails() {
+  const theme = useTheme();
+
   const [widget, setWidget] = useState<GuildWidget>({} as GuildWidget);
   const [loading, setLoading] = useState(true);
 
