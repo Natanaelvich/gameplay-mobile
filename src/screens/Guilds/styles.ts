@@ -1,12 +1,11 @@
-import { StyleSheet } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
+import styled from 'styled-components/native';
 
-export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    paddingTop: 24,
-  },
-  guilds: {
-    width: '100%',
-  },
-});
+export const Container = styled.View`
+  flex: 1;
+  align-items: center;
+  padding-top: 24px;
+`;
+export const Guilds = styled(FlatList)`
+  width: 100%;
+`;

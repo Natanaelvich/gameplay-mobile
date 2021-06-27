@@ -1,46 +1,44 @@
-import { theme } from '@/styles/theme';
-import { StyleSheet } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
 import { getBottomSpace } from 'react-native-iphone-x-helper';
+import styled from 'styled-components/native';
 
-export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  banner: {
-    width: '100%',
-    height: 234,
-  },
-  bannerContent: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    paddingHorizontal: 24,
-    marginBottom: 30,
-  },
-  title: {
-    fontSize: 28,
-    fontFamily: theme.fonts.title700,
-    color: theme.colors.heading,
-  },
-  subtitle: {
-    fontSize: 13,
-    fontFamily: theme.fonts.text400,
-    color: theme.colors.heading,
-    lineHeight: 21,
-  },
-  members: {
-    marginLeft: 24,
-    marginTop: 27,
-  },
-  footer: {
-    paddingHorizontal: 24,
-    paddingVertical: 20,
-    marginBottom: getBottomSpace(),
-  },
-  emptyContainer: {
-    alignItems: 'center',
-  },
-  emptyText: {
-    fontFamily: theme.fonts.text500,
-    color: theme.colors.heading,
-  },
-});
+export const Container = styled.View`
+  flex: 1;
+`;
+export const Banner = styled.ImageBackground`
+  width: 100%;
+  height: 234;
+`;
+export const BannerContent = styled.View`
+  flex: 1;
+  justify-content: flex-end;
+  padding: 0 24px;
+  margin-bottom: 30;
+`;
+export const Title = styled.Text`
+  font-size: 28;
+  font-family: ${props => props.theme.fonts.title700};
+  color: ${props => props.theme.colors.heading};
+`;
+export const Subtitle = styled.Text`
+  font-size: 13;
+  font-family: ${props => props.theme.fonts.text400};
+  color: ${props => props.theme.colors.heading};
+  line-height: 21;
+`;
+export const Members = styled(FlatList)`
+  margin-left: 24;
+  margin-top: 27;
+`;
+export const Footer = styled.View`
+  padding: 0 24px;
+  padding: 20px 0;
+  margin-bottom: ${getBottomSpace()}px;
+`;
+export const EmptyContainer = styled.View`
+  align-items: center;
+`;
+export const EmptyText = styled.Text`
+  font-family: ${props => props.theme.fonts.text500};
+  color: ${props => props.theme.colors.heading};
+`;

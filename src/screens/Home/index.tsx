@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react';
-import { View, FlatList } from 'react-native';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -13,7 +12,7 @@ import { Background } from '../../components/Background';
 import { ButtonAdd } from '../../components/ButtonAdd';
 import { Profile } from '../../components/Profile';
 
-import { styles } from './styles';
+import * as S from './styles';
 
 export function Home() {
   const navigation = useNavigation();
@@ -56,10 +55,10 @@ export function Home() {
 
   return (
     <Background>
-      <View style={styles.header}>
+      <S.Header>
         <Profile />
         <ButtonAdd onPress={handleAppointmentCreate} />
-      </View>
+      </S.Header>
 
       <CategorySelect
         categorySelected={category}
@@ -75,7 +74,7 @@ export function Home() {
             subtitle={`Total ${appointments.length}`}
           />
 
-          <FlatList
+          <S.Matches
             data={appointments}
             keyExtractor={item => item.id}
             renderItem={({ item }) => (
@@ -86,7 +85,6 @@ export function Home() {
             )}
             ItemSeparatorComponent={() => <ListDivider />}
             contentContainerStyle={{ paddingBottom: 69 }}
-            style={styles.matches}
             showsVerticalScrollIndicator={false}
           />
         </>

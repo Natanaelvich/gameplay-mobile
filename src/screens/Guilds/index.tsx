@@ -7,7 +7,7 @@ import { GuildProps } from '../../components/Guild';
 import { Guild } from '../../components/Guild';
 import { ListDivider } from '../../components/ListDivider';
 
-import { styles } from './styles';
+import * as S from './styles';
 
 type Props = {
   handleGuildSelect: (guild: GuildProps) => void;
@@ -29,11 +29,11 @@ export function Guilds({ handleGuildSelect }: Props) {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <S.Container>
       {loading ? (
         <Load />
       ) : (
-        <FlatList
+        <S.Guilds
           data={guilds}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
@@ -43,9 +43,8 @@ export function Guilds({ handleGuildSelect }: Props) {
           ItemSeparatorComponent={() => <ListDivider isCentered />}
           ListHeaderComponent={() => <ListDivider isCentered />}
           contentContainerStyle={{ paddingBottom: 68, paddingTop: 103 }}
-          style={styles.guilds}
         />
       )}
-    </View>
+    </S.Container>
   );
 }

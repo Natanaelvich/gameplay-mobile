@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, Image, Alert, ActivityIndicator } from 'react-native';
+import { Alert, ActivityIndicator } from 'react-native';
 
 import { useAuth } from '@/hooks/useAuth';
 import { theme } from '@/styles/theme';
 import IllustrationImg from '../../assets/illustration.png';
-import { styles } from './styles';
+import * as S from './styles';
 
 import { ButtonIcon } from '../../components/ButtonIcon';
 import { Background } from '../../components/Background';
@@ -22,31 +22,27 @@ export function SignIn() {
 
   return (
     <Background>
-      <View style={styles.container}>
-        <Image
-          source={IllustrationImg}
-          style={styles.image}
-          resizeMode="stretch"
-        />
+      <S.Container>
+        <S.Image source={IllustrationImg} resizeMode="stretch" />
 
-        <View style={styles.content}>
-          <Text style={styles.title}>
+        <S.Content>
+          <S.Title>
             Conecte-se {'\n'}e organize suas {'\n'}
             jogatinas
-          </Text>
+          </S.Title>
 
-          <Text style={styles.subtitle}>
+          <S.Subtitle>
             Crie grupos para jogar seus games {'\n'}
             favoritos com seus amigos
-          </Text>
+          </S.Subtitle>
 
           {loading ? (
             <ActivityIndicator color={theme.colors.primary} />
           ) : (
             <ButtonIcon title="Entrar com Discord" onPress={handleSignIn} />
           )}
-        </View>
-      </View>
+        </S.Content>
+      </S.Container>
     </Background>
   );
 }

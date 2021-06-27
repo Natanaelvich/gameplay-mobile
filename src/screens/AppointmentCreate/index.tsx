@@ -3,18 +3,12 @@ import { Feather } from '@expo/vector-icons';
 import { RectButton } from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import uuid from 'react-native-uuid';
-import {
-  Text,
-  View,
-  Platform,
-  ScrollView,
-  KeyboardAvoidingView,
-} from 'react-native';
+import { View, Platform, ScrollView } from 'react-native';
 
 import { theme } from '@/styles/theme';
 import { useNavigation } from '@react-navigation/core';
 import { COLLECTION_APPOINTMENTS } from '@/configs/database';
-import { styles } from './styles';
+import * as S from './styles';
 
 import { CategorySelect } from '../../components/CategorySelect';
 import { ModalView } from '../../components/ModalView';
@@ -78,22 +72,12 @@ export function AppointmentCreate() {
   }
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={styles.container}
-    >
+    <S.Container behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <Background>
         <ScrollView>
           <Header title="Agendar partida" />
 
-          <Text
-            style={[
-              styles.label,
-              { marginLeft: 24, marginTop: 36, marginBottom: 18 },
-            ]}
-          >
-            Categoria
-          </Text>
+          <S.Label margin>Categoria</S.Label>
 
           <CategorySelect
             hasCheckBox
@@ -101,60 +85,56 @@ export function AppointmentCreate() {
             categorySelected={category}
           />
 
-          <View style={styles.form}>
+          <S.Form>
             <RectButton onPress={handleOpenGuilds}>
-              <View style={styles.select}>
+              <S.Select>
                 {guild.icon ? (
                   <GuildIcon guildId={guild.id} iconId={guild.icon} />
                 ) : (
-                  <View style={styles.image} />
+                  <S.Image />
                 )}
 
-                <View style={styles.selectBody}>
-                  <Text style={styles.label}>
+                <S.SelectBody>
+                  <S.Label>
                     {guild.name ? guild.name : 'Selecione um servidor'}
-                  </Text>
-                </View>
+                  </S.Label>
+                </S.SelectBody>
 
                 <Feather
                   name="chevron-right"
                   color={theme.colors.heading}
                   size={18}
                 />
-              </View>
+              </S.Select>
             </RectButton>
 
-            <View style={styles.field}>
+            <S.Field>
               <View>
-                <Text style={[styles.label, { marginBottom: 12 }]}>
-                  Dia e mês
-                </Text>
+                <S.Label>Dia e mês</S.Label>
 
-                <View style={styles.column}>
+                <S.Column>
                   <SmallInput maxLength={2} onChangeText={setDay} />
-                  <Text style={styles.divider}>/</Text>
+                  <S.Divider>/</S.Divider>
                   <SmallInput maxLength={2} onChangeText={setMonth} />
-                </View>
+                </S.Column>
               </View>
 
               <View>
-                <Text style={[styles.label, { marginBottom: 12 }]}>
-                  Hora e minuto
-                </Text>
+                <S.Label>Hora e minuto</S.Label>
 
-                <View style={styles.column}>
+                <S.Column>
                   <SmallInput maxLength={2} onChangeText={setHour} />
-                  <Text style={styles.divider}>:</Text>
+                  <S.Divider>:</S.Divider>
                   <SmallInput maxLength={2} onChangeText={setMinute} />
-                </View>
+                </S.Column>
               </View>
-            </View>
+            </S.Field>
 
-            <View style={[styles.field, { marginBottom: 12 }]}>
-              <Text style={styles.label}>Descrição</Text>
+            <S.Field>
+              <S.Label>Descrição</S.Label>
 
-              <Text style={styles.caracteresLimit}>Max 100 caracteres</Text>
-            </View>
+              <S.CaracteresLimit>Max 100 caracteres</S.CaracteresLimit>
+            </S.Field>
 
             <TextArea
               multiline
@@ -164,16 +144,16 @@ export function AppointmentCreate() {
               onChangeText={setDescription}
             />
 
-            <View style={styles.footer}>
+            <S.Footer>
               <Button title="Agendar" onPress={handleSave} />
-            </View>
-          </View>
+            </S.Footer>
+          </S.Form>
         </ScrollView>
       </Background>
 
       <ModalView visible={openGuildsModa} closeModal={handleCloseGuilds}>
         <Guilds handleGuildSelect={handleGuildSelect} />
       </ModalView>
-    </KeyboardAvoidingView>
+    </S.Container>
   );
 }

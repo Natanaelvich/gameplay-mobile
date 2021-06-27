@@ -3,21 +3,12 @@ import { Fontisto } from '@expo/vector-icons';
 import { useRoute } from '@react-navigation/native';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import * as Linking from 'expo-linking';
-import {
-  ImageBackground,
-  Text,
-  View,
-  FlatList,
-  Platform,
-  Alert,
-  Share,
-} from 'react-native';
+import { Platform, Alert, Share } from 'react-native';
 
 import { theme } from '@/styles/theme';
 import { AppointmentProps } from '@/components/Appointment';
 import { api } from '@/services/api';
 import { Load } from '@/components/Load';
-import { styles } from './styles';
 import BannerImg from '../../assets/banner.png';
 
 import { ListDivider } from '../../components/ListDivider';
@@ -26,6 +17,8 @@ import { ListHeader } from '../../components/ListHeader';
 import { ButtonIcon } from '../../components/ButtonIcon';
 import { Member, MemberProps } from '../../components/Member';
 import { Header } from '../../components/Header';
+
+import * as S from './styles';
 
 type Params = {
   guildSelected: AppointmentProps;
@@ -93,13 +86,13 @@ export function AppointmentDetails() {
         }
       />
 
-      <ImageBackground source={BannerImg} style={styles.banner}>
-        <View style={styles.bannerContent}>
-          <Text style={styles.title}> {guildSelected?.guild?.name}</Text>
+      <S.Banner source={BannerImg}>
+        <S.BannerContent>
+          <S.Title> {guildSelected?.guild?.name}</S.Title>
 
-          <Text style={styles.subtitle}>{guildSelected?.description}</Text>
-        </View>
-      </ImageBackground>
+          <S.Subtitle>{guildSelected?.description}</S.Subtitle>
+        </S.BannerContent>
+      </S.Banner>
 
       {loading ? (
         <Load />
@@ -112,26 +105,23 @@ export function AppointmentDetails() {
             }`}
           />
 
-          <FlatList
+          <S.Members
             data={widget?.members || []}
             keyExtractor={item => item.id}
             renderItem={({ item }) => <Member data={item} />}
             ItemSeparatorComponent={() => <ListDivider isCentered />}
-            style={styles.members}
             ListEmptyComponent={() => (
-              <View style={styles.emptyContainer}>
-                <Text style={styles.emptyText}>
-                  Não há ninguém online agora.
-                </Text>
-              </View>
+              <S.EmptyContainer>
+                <S.EmptyText>Não há ninguém online agora.</S.EmptyText>
+              </S.EmptyContainer>
             )}
           />
         </>
       )}
       {guildSelected?.guild?.owner && (
-        <View style={styles.footer}>
+        <S.Footer>
           <ButtonIcon title="Entrar na partida" onPress={handleOpenGuild} />
-        </View>
+        </S.Footer>
       )}
     </Background>
   );
