@@ -1,39 +1,39 @@
 import { FlatList } from 'react-native-gesture-handler';
 import { getBottomSpace } from 'react-native-iphone-x-helper';
 import styled from 'styled-components/native';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export const Container = styled.View`
   flex: 1;
 `;
 export const Banner = styled.ImageBackground`
   width: 100%;
-  height: 234px;
+  height: ${RFValue(234)}px;
 `;
 export const BannerContent = styled.View`
   flex: 1;
   justify-content: flex-end;
-  padding: 0 24px;
-  margin-bottom: 30px;
+  padding: 0 ${RFValue(24)}px;
+  margin-bottom: ${RFValue(30)}px;
 `;
 export const Title = styled.Text`
-  font-size: 28px;
+  font-size: ${RFValue(28)}px;
   font-family: ${props => props.theme.fonts.title700};
   color: ${props => props.theme.colors.heading};
 `;
 export const Subtitle = styled.Text`
-  font-size: 13px;
+  font-size: ${RFValue(13)}px;
   font-family: ${props => props.theme.fonts.text400};
   color: ${props => props.theme.colors.heading};
-  line-height: 21px;
+  line-height: ${RFValue(21)}px;
 `;
 export const Members = styled(FlatList)`
-  margin-left: 24px;
-  margin-top: 27px;
+  margin-left: ${RFValue(24)}px;
+  margin-top: ${RFValue(27)}px;
 `;
 export const Footer = styled.View`
-  padding: 0 24px;
-  padding: 20px 0;
-  margin-bottom: ${getBottomSpace()}px;
+  padding: ${RFValue(20)}px ${RFValue(24)}px;
+  margin-bottom: ${RFValue(getBottomSpace())}px;
 `;
 export const EmptyContainer = styled.View`
   align-items: center;

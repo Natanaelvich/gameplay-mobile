@@ -79,7 +79,9 @@ export function AppointmentCreate() {
         <ScrollView>
           <Header title="Agendar partida" />
 
-          <S.Label margin>Categoria</S.Label>
+          <S.Label marginBottom margin>
+            Categoria
+          </S.Label>
 
           <CategorySelect
             hasCheckBox
@@ -112,7 +114,7 @@ export function AppointmentCreate() {
 
             <S.Field>
               <View>
-                <S.Label>Dia e mês</S.Label>
+                <S.Label marginBottom>Dia e mês</S.Label>
 
                 <S.Column>
                   <SmallInput maxLength={2} onChangeText={setDay} />
@@ -122,7 +124,7 @@ export function AppointmentCreate() {
               </View>
 
               <View>
-                <S.Label>Hora e minuto</S.Label>
+                <S.Label marginBottom>Hora e minuto</S.Label>
 
                 <S.Column>
                   <SmallInput maxLength={2} onChangeText={setHour} />
@@ -133,7 +135,7 @@ export function AppointmentCreate() {
             </S.Field>
 
             <S.Field>
-              <S.Label>Descrição</S.Label>
+              <S.Label marginBottom>Descrição</S.Label>
 
               <S.CaracteresLimit>Max 100 caracteres</S.CaracteresLimit>
             </S.Field>
